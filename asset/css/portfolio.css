@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: #021024;
+    z-index: 1000;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: -50px;
+}
+body{
+    background: url('/asset/img/backgroundall.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.logo {
+    color: #c1b8ff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-left: 100px;
+    font-family: "Orbitron", serif;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #c1b8ff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    margin-right: 60px;
+}
+
+.nav-links a:hover {
+    color: #5483b3;
+}
+
+.menu-icon, .close-icon {
+    display: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        margin-left: 300px;
+    }
+
+    .close-icon {
+        display: none;
+        margin-left: 300px;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: #021024;
+        text-align: center;
+        display: none;
+        flex-direction: column;
+        padding: 10px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+        animation: slideDown 0.1s ease-in-out;
+    }
+
+    .menu-icon.active {
+        display: none;
+    }
+
+    .close-icon.active {
+        display: block;
+    }
+
+    .nav-links li {
+        padding: 15px 0;
+    }
+    .logo{
+        margin-right: 200px;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        margin-right: 0;
+        gap: 20px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+.red-line {
+    position: fixed;
+    left: 40px;
+    top: 0;
+    width: 2px;
+    height: 100vh;
+    background: #021024;
+    z-index: 999;
+}
+
+.projects-section {
+    max-width: 90%;
+    margin: 100px auto;
+    text-align: center;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-top: 150px;
+    text-transform: uppercase;
+    color: #021024;
+    font-family: "Orbitron", serif;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+}
+
+.project {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.project img {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.project:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: #021024;
+    color: #c1e8ff;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.project:hover .overlay {
+    transform: translateY(0);
+}
+
+.projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+@media screen and (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .project img {
+        height: 280px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .project img {
+        height: 220px;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .project img {
+        height: 200px;
+    }
+    .red-line {
+        left: 10px;
+    }
+}
