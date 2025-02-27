@@ -24,7 +24,7 @@
     font-family: "Orbitron", serif;
 }
 body {
-    background: url('/asset/img/backgroundall.jpg') no-repeat center center fixed;
+    background: url('../../../img/backgroundall.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 .nav-links {
